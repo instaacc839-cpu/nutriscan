@@ -171,8 +171,9 @@ export default function Scanner() {
           body: JSON.stringify({ imageBase64: base64, mimeType: fileRef.current.type })
         })
         const data = await res.json()
-        if (data.error) throw new Error(data.error)
-        setResult(data)
+console.log('API response:', JSON.stringify(data))
+if (data.error) throw new Error(data.error)
+setResult(data)
       } else {
         setResult(getRandomMockResult())
       }
