@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
           contents: [{
             parts: [
               { inline_data: { mime_type: mimeType, data: imageBase64 } },
-              { text: `Analyze this food image and respond with ONLY a JSON object, no markdown, no backticks, just raw JSON: {"foodName":"name","emoji":"emoji","healthScore":7.5,"calories":350,"protein":12,"carbs":45,"fat":14,"sugar":8,"fiber":4,"goodForMuscleGain":true,"goodForWeightLoss":false,"aiExplanation":"explanation here","tags":["tag1"],"alternatives":[{"name":"alt food","emoji":"🥗","reason":"why better","calories":300}]}` }
+              { text: `Look at this image very carefully and identify exactly what food is shown. Do not guess or assume - only describe what you actually see. Respond with ONLY a raw JSON object, no markdown, no backticks: {"foodName":"exact food name you see in image","emoji":"relevant emoji","healthScore":7.5,"calories":350,"protein":12,"carbs":45,"fat":14,"sugar":8,"fiber":4,"goodForMuscleGain":true,"goodForWeightLoss":false,"aiExplanation":"explanation here","tags":["tag1"],"alternatives":[{"name":"alt food","emoji":"🥗","reason":"why better","calories":300}]}` }
             ]
           }]
         })
